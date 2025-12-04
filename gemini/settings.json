@@ -1,6 +1,28 @@
 {
-  "theme": "ANSI",
-  "selectedAuthType": "oauth-personal",
+  "tools": {
+    "exclude": [
+      "ShellTool(rm -rf)",
+      "ShellTool(sudo dd)",
+      "ShellTool(sudo mkfs)",
+      "ShellTool(sudo fdisk)",
+      "ShellTool(sudo mount)",
+      "ShellTool(sudo umount)",
+      "ShellTool(dd)",
+      "ShellTool(mkfs)",
+      "ShellTool(fdisk)",
+      "ShellTool(chmod 777 /*)",
+      "ShellTool(chown root)",
+      "ShellTool(sudo chmod 777)",
+      "ShellTool(sudo chown)",
+      "ShellTool(sudo -i)",
+      "ShellTool(sudo su)",
+      "ShellTool(docker system prune -af)",
+      "ShellTool(npm publish)",
+      "ShellTool(cargo publish)",
+      "ShellTool(git commit)",
+      "ShellTool(git push)"
+    ]
+  },
   "mcpServers": {
     "atlassian": {
       "command": "npx",
@@ -11,27 +33,17 @@
       ]
     }
   },
-  "preferredEditor": "vim",
-  "excludeTools": [
-    "ShellTool(rm -rf)",
-    "ShellTool(sudo dd)",
-    "ShellTool(sudo mkfs)",
-    "ShellTool(sudo fdisk)",
-    "ShellTool(sudo mount)",
-    "ShellTool(sudo umount)",
-    "ShellTool(dd)",
-    "ShellTool(mkfs)",
-    "ShellTool(fdisk)",
-    "ShellTool(chmod 777 /*)",
-    "ShellTool(chown root)",
-    "ShellTool(sudo chmod 777)",
-    "ShellTool(sudo chown)",
-    "ShellTool(sudo -i)",
-    "ShellTool(sudo su)",
-    "ShellTool(docker system prune -af)",
-    "ShellTool(npm publish)",
-    "ShellTool(cargo publish)",
-    "ShellTool(git commit)",
-    "ShellTool(git push)"
-  ]
+  "general": {
+    "preferredEditor": "vim",
+    "previewFeatures": true
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "ui": {
+    "theme": "ANSI"
+  }
 }
+
