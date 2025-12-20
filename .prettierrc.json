@@ -1,0 +1,11 @@
+{
+  "tabWidth": 4,
+  "overrides": [
+    {
+      "files": "markdown",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}
