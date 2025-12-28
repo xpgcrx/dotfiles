@@ -216,9 +216,15 @@ install_vrapper() {
   backup_and_link "$HOME/.vrapperrc" "$DOTFILES_DIR/vrapper/.vrapperrc"
 }
 
+install_ghostty() {
+  log "Setting up Ghostty config..."
+  mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
+  backup_and_link "$HOME/Library/Application Support/com.mitchellh.ghostty/config" "$DOTFILES_DIR/ghostty/config"
+}
+
 main() {
   if [ $# -eq 0 ]; then
-    echo "Usage: $0 [all|zsh|nvim|tmux|lazygit|brew|aqua|gitconfig|iterm2|claude|gemini|codex|intellij|npm|obsidian|amazonq|rovodev|vrapper]"
+    echo "Usage: $0 [all|zsh|nvim|tmux|lazygit|brew|aqua|gitconfig|iterm2|claude|gemini|codex|intellij|npm|obsidian|amazonq|rovodev|vrapper|ghostty]"
     exit 1
   fi
 
@@ -243,6 +249,7 @@ main() {
       install_amazonq
       install_rovodev
       install_vrapper
+      install_ghostty
       ;;
     zsh) install_zsh ;;
     nvim) install_nvim ;;
@@ -264,6 +271,7 @@ main() {
     amazonq) install_amazonq ;;
     rovodev) install_rovodev ;;
     vrapper) install_vrapper ;;
+    ghostty) install_ghostty ;;
     *)
       echo "Unknown option: $arg"
       exit 1
