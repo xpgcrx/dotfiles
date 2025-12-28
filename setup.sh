@@ -220,6 +220,17 @@ install_ghostty() {
   log "Setting up Ghostty config..."
   mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
   backup_and_link "$HOME/Library/Application Support/com.mitchellh.ghostty/config" "$DOTFILES_DIR/ghostty/config"
+
+  local ghostty_app_path="/Applications/Ghostty.app/Contents/MacOS/ghostty"
+  local ghostty_bin_path="/usr/local/bin/ghostty"
+
+  if [ -f "$ghostty_app_path" ]; then
+    log "Creating symlink for Ghostty executable..."
+    sudo ln -sf "$ghostty_app_path" "$ghostty_bin_path"
+    log "Symlink created: $ghostty_bin_path -> $ghostty_app_path"
+  else
+    log "Ghostty application not found at $ghostty_app_path, skipping symlink creation."
+  fi
 }
 
 main() {
