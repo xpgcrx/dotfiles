@@ -75,8 +75,8 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
-    priority = 1000,
-    lazy = false,
+    --priority = 1000,
+    --lazy = false,
     config = function()
       -- Default options
       require("nightfox").setup({
@@ -129,18 +129,18 @@ return {
 
       -- setup must be called before loading
       -- vim.cmd("colorscheme nightfox")
-      vim.cmd("colorscheme carbonfox")
+      -- vim.cmd("colorscheme carbonfox")
 
       -- Set the highlight for the current line number (absolute line number)
-      vim.cmd([[
-        highlight CursorLineNr guifg=#00ffff guibg=NONE gui=NONE
-      ]])
+      -- vim.cmd([[
+      --   highlight CursorLineNr guifg=#00ffff guibg=NONE gui=NONE
+      -- ]])
     end,
   },
   {
     "sainnhe/everforest",
-    -- priority = 1000,
-    -- lazy = false,
+    priority = 1000,
+    lazy = false,
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
@@ -148,7 +148,7 @@ return {
       vim.g.everforest_disable_italic_comment = true
       vim.g.everforest_background = "hard"
       vim.g.everforest_better_performance = true
-      --vim.cmd.colorscheme("everforest")
+      vim.cmd.colorscheme("everforest")
     end,
   },
   {
@@ -212,8 +212,8 @@ return {
   },
   {
     "nyoom-engineering/oxocarbon.nvim",
-    priority = 1000,
-    lazy = false,
+    -- priority = 1000,
+    -- lazy = false,
     -- Add in any other configuration;
     --   event = foo,
     --   config = bar
