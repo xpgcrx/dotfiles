@@ -3,7 +3,7 @@
 TIMESTAMP := $(shell date +%Y%m%d-%H%M%S)
 
 ## Run all setup tasks
-all: brew zsh nvim tmux lazygit aqua npm gitconfig claude gemini codex intellij obsidian amazonq rovodev vrapper ghostty
+all: brew zsh nvim tmux lazygit aqua npm gitconfig obsidian ghostty
 
 brew: ## Install CLI tools via Homebrew
 	LOG_TIMESTAMP=$(TIMESTAMP) ./setup.sh brew
