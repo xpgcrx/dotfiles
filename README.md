@@ -5,11 +5,11 @@ designed for easy setup and consistent experience across different machines.
 
 ## NeoVim/iTerm2 Screenshot
 
-- 2025-04-09
-- neovim: carbonfox theme
-- iTerm2: Oxocarbon theme
+- 2025-12-28
+- neovim: everforest theme
+- ghostty: Everforest Dark Hard theme
 
-![2025-04-09 NeoVim iTerm2 Screenshot](./screenshots/20250409-neovim-carbonfox-iterm2-oxocarbon.png)
+![2025-12-28 NeoVim ghostty Screenshot](./screenshots/20251228-neovim-ghostty-everforest.png)
 
 ## How to setup `dotfiles` on a new system
 
@@ -20,7 +20,7 @@ designed for easy setup and consistent experience across different machines.
 - [`aqua`](https://aquaproj.github.io/) (You can manually install it by `brew install aqua`)
 - Your `.zshrc` will be installed and configured to point to your global `aqua.yaml` (e.g., via `AQUA_GLOBAL_CONFIG`)
 - Oh-my-zsh is installed
-  - https://ohmyz.sh/#install
+    - https://ohmyz.sh/#install
 
 > 🛠️ Note: `aqua` and your `.zshrc` can be set up automatically by this setup process.
 
@@ -152,6 +152,12 @@ Raycast pro plan can manage the settings via cloud sync.
 - https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ruff
 
 ## Past NeoVim/iTerm2 Screenshots
+
+- 2025-04-09
+    - neovim: carbonfox theme
+    - iTerm2: Oxocarbon theme
+
+![2025-04-09 NeoVim iTerm2 Screenshot](./screenshots/20250409-neovim-carbonfox-iterm2-oxocarbon.png)
 
 - vscode theme
 
