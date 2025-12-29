@@ -51,3 +51,7 @@
 theme = Everforest Dark Hard
 #selection-background = #008080
 #selection-foreground = #008080
+
+font-family = JetBrainsMonoNL Nerd Font Mono
+font-feature = -dlig
+font-size = 9
