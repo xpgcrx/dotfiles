@@ -150,6 +150,6 @@ mainやdevelopなど指定されたブランチとの差分をローカルでレ
 
 ドキュメントレビュー指示を出された場合は、以下のMarkdownに記載の観点を参考にレビューする。
 
-gemini/doc-review.md
+gemini/doc-review-ja.md
 
 注意：コードレビューの指示の場合はこちらの観点は見ない。
