@@ -17,3 +17,5 @@
 [merge]
     conflictStyle = zdiff3
 
+[user]
+	name = xpgcrx
