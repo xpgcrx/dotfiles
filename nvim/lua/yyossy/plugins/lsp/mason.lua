@@ -37,7 +37,7 @@ return {
         "gopls",
         -- "groovyls",
         "html",
-        "jdtls", -- java
+        "jdtls", -- java: nvim-jdtlsを使うのでこちらはコメントアウト
         "jsonls",
         "lua_ls",
         -- "ltex", -- reStructuredText
@@ -60,6 +60,7 @@ return {
         "stylua", -- lua formatter
         "shellcheck", -- shell linter
         "shfmt", -- shell formatter
+        "xmlformatter",
       },
     })
   end,

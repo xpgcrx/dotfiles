@@ -15,6 +15,7 @@ return {
         markdown = { "prettier" },
         lua = { "stylua" },
         python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
+        xml = { "xmlformatter" },
       },
       format_on_save = function(bufnr)
         -- Disable autoformat on certain filetypes
@@ -24,6 +25,7 @@ return {
           "json",
           "yaml",
           "python",
+          "typescript",
         }
         if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
           return
