@@ -48,9 +48,11 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = Everforest Dark Hard
+#theme = Everforest Dark Hard
 #selection-background = #008080
 #selection-foreground = #008080
+
+theme = Nightfox
 
 font-family = JetBrainsMonoNL Nerd Font Mono
 font-feature = -dlig

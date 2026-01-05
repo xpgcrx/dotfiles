@@ -5,11 +5,11 @@ designed for easy setup and consistent experience across different machines.
 
 ## NeoVim/iTerm2 Screenshot
 
-- 2025-12-28
-- neovim: everforest theme
-- ghostty: Everforest Dark Hard theme
+- 2026-01-05
+    - neovim: Nightfox theme
+    - ghostty: Nightfox theme
 
-![2025-12-28 NeoVim ghostty Screenshot](./screenshots/20251228-neovim-ghostty-everforest.png)
+![2026-01-05 NeoVim ghostty Nightfox Screenshot](./screenshots/20260105-neovim-ghostty-nightfox.png)
 
 ## How to setup `dotfiles` on a new system
 
@@ -152,6 +152,12 @@ Raycast pro plan can manage the settings via cloud sync.
 - https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ruff
 
 ## Past NeoVim/iTerm2 Screenshots
+
+- 2025-12-28
+    - neovim: everforest theme
+    - ghostty: Everforest Dark Hard theme
+
+![2025-12-28 NeoVim ghostty Screenshot](./screenshots/20251228-neovim-ghostty-everforest.png)
 
 - 2025-04-09
     - neovim: carbonfox theme
