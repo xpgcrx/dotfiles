@@ -1,6 +1,3 @@
-[include]
-    path = ~/.gitconfig.local
-
 [core]
     excludesfile = ~/.gitignore_global
     pager = delta
@@ -19,3 +16,7 @@
 
 [user]
 	name = xpgcrx
+
+[include]
+    path = ~/.gitconfig.local
+
