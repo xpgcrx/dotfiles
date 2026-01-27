@@ -86,6 +86,8 @@ nmap gi <Action>(GotoImplementation)
 
 nmap gN <Action>(GotoTest)
 
+nmap gH <Action>(CallHierarchy)
+
 nmap <leader>K <Action>(ShowHoverInfo)
 
 nmap <leader>sr <Action>(RenameElement)
