@@ -21,7 +21,10 @@
       "ShellTool(cargo publish)",
       "ShellTool(git commit)",
       "ShellTool(git push)"
-    ]
+    ],
+    "shell": {
+      "showColor": true
+    }
   },
   "mcpServers": {
     "atlassian": {
