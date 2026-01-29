@@ -251,6 +251,7 @@ alias gc!='git commit --verbose --amend'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gdsc='git diff --staged | cat'
+alias gdsnp='git --no-pager diff --staged'
 
 alias glo='git log --oneline --decorate'
 alias glog='git log --oneline --decorate --graph'
