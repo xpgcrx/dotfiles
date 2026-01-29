@@ -58,39 +58,6 @@
 
 - テストケースを表す新規メソッドには、何を検証するかを簡潔に記述したドキュメントを付ける。
 
-## Python開発
-
-### ドキュメント
-
-- docstringはGoogleスタイルにする
-
-## Java開発
-
-### Test
-
-#### テストフレームワーク
-
-- JUnit5
-
-#### テスト作成方針
-
-- ケースが多い場合などはParameterized Testを使用する
-
-#### テスト実行して検証する場合
-
-以下のように最小限のテストケースを実行するようにする。
-
-```bash
-# sut-mvn-moduleモジュールのXXXTestクラスのyyyTestMethodメソッドを実行する
-mvn test -pl sut-mvn-module -Dtest=XXXTest#yyyTestMethod
-```
-
-## Markdown
-
-- 横に長過ぎる文章は避ける。大体1行英数字換算で100文字くらいを目安とする。日本語の場合は50-60文字くらい。
-- 見出しと本文の間は常に1行改行を入れること
-- インデントはwhitespace 4つとする
-
 ## 🚫 セキュリティと品質標準
 
 ### 禁止ルール（交渉不可）
@@ -109,29 +76,6 @@ mvn test -pl sut-mvn-module -Dtest=XXXTest#yyyTestMethod
 - **必須：破壊的変更を文書化**
 - **必須：すべての開発でフィーチャーブランチを使用**
 - **必須：すべてのパブリックAPIに包括的なドキュメントを追加**
-
-## 🔧 コミット標準
-
-### Conventional Commits
-
-```bash
-# フォーマット: <type>(<scope>): <subject>
-git commit -m "feat(auth): add JWT token refresh"
-git commit -m "fix(api): handle null response correctly"
-git commit -m "docs(readme): update installation steps"
-git commit -m "perf(db): optimize query performance"
-git commit -m "refactor(core): extract validation logic"
-```
-
-### コミットその他
-
-以下のような使用ツールに関する文言はコミットメッセージには不要。
-
-```bash
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
 
 ## コードレビュー方法
 
