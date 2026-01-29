@@ -141,23 +141,20 @@ install_claude() {
 
 install_gemini() {
   log "Setting up Gemini CLI config..."
-  mkdir -p "$HOME/.gemini/commands"
+  # Ensure the parent directory exists
+  mkdir -p "$HOME/.gemini"
 
   backup_and_link "$HOME/.gemini/settings.json" "$DOTFILES_DIR/gemini/settings.json"
   backup_and_link "$HOME/.gemini/GEMINI.md" "$DOTFILES_DIR/gemini/GEMINI.md"
 
-  local commands_src_dir="$DOTFILES_DIR/gemini/commands"
-  local commands_dst_dir="$HOME/.gemini/commands"
+  if [ -d "$DOTFILES_DIR/gemini/skills" ]; then
+    log "Linking Gemini skills directory..."
+    backup_and_link "$HOME/.gemini/skills" "$DOTFILES_DIR/gemini/skills"
+  fi
 
-  if [ -d "$commands_src_dir" ]; then
-    log "Linking Gemini custom commands..."
-    for src_path in "$commands_src_dir"/*; do
-      if [ -f "$src_path" ]; then
-        local filename
-        filename=$(basename "$src_path")
-        backup_and_link "$commands_dst_dir/$filename" "$src_path"
-      fi
-    done
+  if [ -d "$DOTFILES_DIR/gemini/commands" ]; then
+    log "Linking Gemini commands directory..."
+    backup_and_link "$HOME/.gemini/commands" "$DOTFILES_DIR/gemini/commands"
   fi
 }
 

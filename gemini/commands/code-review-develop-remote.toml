@@ -1,9 +1,0 @@
-# Gemini CLI custom slash command for code review (develop/remote)
-
-# 事前にdevelopブランチもローカルで最新化しておく必要が有る
-
-description = "ローカルの現在のブランチとdevelopのコミット済みの差分に対してコードレビューを行う。"
-
-prompt = """
-ローカルの現在のブランチとdevelopブランチのコミット済みの差分に対してコードレビューを行ってください。
-"""

@@ -5,9 +5,6 @@
 - 常に日本語で会話すること
 - 横に長過ぎるコードコメントは避ける。大体1行英数字換算で100文字くらいを目安とする。日本語の場合は50-60文字くらい。
 - 日本語の文章を出力する際は基本的には「ですます調」ではなく、本文書のような常体とする
-- プロジェクトで採用しているツールが既にあるのであれば、ここで使用を推薦しているツールより優先すること
-- 最大限の効率を追求するために、複数の独立した処理を実行しなければならない場合は、
-  それらのツールを順番に呼び出すのではなく、同時に起動する。
 
 重要:
 
@@ -17,7 +14,7 @@
   コードベースの今の状態に対する自らの認識を更新すること
 - 指示が無い限り、ファイルの改行コードを絶対に勝手に変えないこと
 
-## 開発哲学
+## 開発方針
 
 言語に依らない開発全般について従うべき方針を記載する。
 
@@ -58,40 +55,7 @@
 
 - テストケースを表す新規メソッドには、何を検証するかを簡潔に記述したドキュメントを付ける。
 
-## Python開発
-
-### ドキュメント
-
-- docstringはGoogleスタイルにする
-
-## Java開発
-
-### Test
-
-#### テストフレームワーク
-
-- JUnit5
-
-#### テスト作成方針
-
-- ケースが多い場合などはParameterized Testを使用する
-
-#### テスト実行して検証する場合
-
-以下のように最小限のテストケースを実行するようにする。
-
-```bash
-# sut-mvn-moduleモジュールのXXXTestクラスのyyyTestMethodメソッドを実行する
-mvn test -pl sut-mvn-module -Dtest=XXXTest#yyyTestMethod
-```
-
-## Markdown
-
-- 横に長過ぎる文章は避ける。大体1行英数字換算で100文字くらいを目安とする。日本語の場合は50-60文字くらい。
-- 見出しと本文の間は常に1行改行を入れること
-- インデントはwhitespace 4つとする
-
-## 🚫 セキュリティと品質標準
+## セキュリティと品質標準
 
 ### 禁止ルール（交渉不可）
 
@@ -110,46 +74,3 @@ mvn test -pl sut-mvn-module -Dtest=XXXTest#yyyTestMethod
 - **必須：すべての開発でフィーチャーブランチを使用**
 - **必須：すべてのパブリックAPIに包括的なドキュメントを追加**
 
-## 🔧 コミット標準
-
-### Conventional Commits
-
-```bash
-# フォーマット: <type>(<scope>): <subject>
-git commit -m "feat(auth): add JWT token refresh"
-git commit -m "fix(api): handle null response correctly"
-git commit -m "docs(readme): update installation steps"
-git commit -m "perf(db): optimize query performance"
-git commit -m "refactor(core): extract validation logic"
-```
-
-### コミットその他
-
-以下のような使用ツールに関する文言はコミットメッセージには不要。
-
-```bash
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
-
-## コードレビュー方法
-
-コードレビュー指示を出された場合に、GitHubやBitbucketのPR内容を参照出来ない場合は、
-ローカルにレビュー対象ブランチをcheckoutし、
-mainやdevelopなど指定されたブランチとの差分をローカルでレビューするようにする。
-また、特別な指示が無ければコミット済みの内容のみレビュー対象とすれば良い
-（ローカルにあるコミットしていない差分やUntrackingな差分はレビュー不要）。
-
-コードレビュー観点は、レビュー対象リポジトリルートのGEMINI.mdに記載がある場合、
-そちらの観点を中心にレビューする。
-
-また、仕様が提示されていない場合は、提示できるかなどをレビューに入る前にユーザに確認する。
-
-## ドキュメントレビュー
-
-ドキュメントレビュー指示を出された場合は、以下のMarkdownに記載の観点を参考にレビューする。
-
-gemini/doc-review-ja.md
-
-注意：コードレビューの指示の場合はこちらの観点は見ない。
