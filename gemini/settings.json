@@ -43,7 +43,12 @@
     }
   },
   "ui": {
-    "theme": "ANSI"
+    "theme": "ANSI",
+    "footer": {
+      "hideContextPercentage": false
+    }
+  },
+  "experimental": {
+    "plan": true
   }
 }
-
