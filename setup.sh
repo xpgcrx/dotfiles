@@ -156,6 +156,11 @@ install_gemini() {
     log "Linking Gemini commands directory..."
     backup_and_link "$HOME/.gemini/commands" "$DOTFILES_DIR/gemini/commands"
   fi
+
+  if [ -d "$DOTFILES_DIR/gemini/agents" ]; then
+    log "Linking Gemini agents directory..."
+    backup_and_link "$HOME/.gemini/agents" "$DOTFILES_DIR/gemini/agents"
+  fi
 }
 
 install_codex() {
