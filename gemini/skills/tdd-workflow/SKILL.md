@@ -63,6 +63,8 @@ Javaを例に説明していますが他の言語でも考え方は同じです�
 
 JUnit 5 を使用してテストケースを作成します。
 
+- 以下のユニットテストパターンの項目をよく読んで参考にすること
+
 ```java
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -131,51 +133,9 @@ mvn jacoco:report
 
 ## テストパターン
 
-### ユニットテスト・パターン (JUnit 5 + Mockito)
+### ユニットテスト・パターン(JUnit)
 
-```java
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
-import static org.junit.jupiter.api.Assertions.*;
-
-@ExtendWith(MockitoExtension.class)
-class CalculatorServiceTest {
-
-    @InjectMocks
-    private CalculatorService service;
-
-    @Test
-    void add_ShouldReturnSum() {
-        int result = service.add(10, 20);
-        assertEquals(30, result, "10 + 20 は 30 である必要があります");
-    }
-}
-
-```
-
-### ユニットテスト・パターン (JUnit 5 + 実オブジェクト優先)
-
-古典派の方針に従い、依存先が計算ロジックなどの場合はモック化せず、
-基本的には実オブジェクトを組み合わせて状態を検証します。
-
-```java
-class OrderServiceTest {
-@Test
-void calculateTotal_ShouldIncludeTax() {
-// PriceCalculatorは実オブジェクトを使用（モックにしない）
-PriceCalculator calculator = new PriceCalculator();
-OrderService service = new OrderService(calculator);
-
-        double total = service.calculateTotal(100);
-        assertEquals(110, total);
-    }
-
-}
-```
-
-### パラメータ化テスト・パターン (ParameterizedTest)
+#### ParameterizedTestの使用
 
 複数の入力値に対して同じロジックを効率的にテストする場合に使用します。
 
@@ -205,6 +165,100 @@ class ValidationUtilsTest {
     }
 }
 
+```
+
+#### 共通のセットアップ（BeforeEach）
+
+テストクラス内で共通して必要なオブジェクトの初期化や状態の設定には `@BeforeEach` を使用します。
+これにより、各テストメソッドの独立性を保ちつつ、重複したセットアップコードを排除できます。
+
+```java
+import org.junit.jupiter.api.BeforeEach;
+
+class OrderServiceTest {
+    private OrderService service;
+    private OrderRepository repository;
+
+    @BeforeEach
+    void setUp() {
+        // 各テストメソッドの実行前に呼ばれる
+        repository = new InMemoryOrderRepository();
+        service = new OrderService(repository);
+    }
+
+    @Test
+    void shouldCreateOrder() {
+        // serviceを使ったテスト
+    }
+}
+```
+
+#### 振る舞いの検証（実装の詳細をテストしない）
+
+テストは「何をするか（振る舞い）」を検証すべきであり、
+「どのように実現しているか（実装の詳細）」に依存すべきではありません。
+基本的には public メソッド（公開 API）を介してテストを行い、
+内部の private メソッドやフィールドを直接操作したり検証したりすることは避けます。
+これにより、内部実装をリファクタリングしてもテストが壊れにくくなります。
+
+```java
+// ✅ 正解: 公開された振る舞いを検証する
+@Test
+void calculateTotal_ShouldApplyDiscount() {
+    Order order = new Order(100);
+    double total = service.calculateTotal(order);
+    assertEquals(90, total); // 10%割引が適用された「結果」を検証
+}
+
+// ❌ 避けるべき: 内部実装（privateフィールドや特定のアルゴリズム）を検証する
+// assertEquals(0.1, service.discountRate);
+```
+
+#### テストのグループ化 (@Nested)
+
+関連するテストケース（例えば、同じメソッドに対するテストや、特定の状態におけるテスト群）を
+`@Nested` を使用して内部クラスとしてグループ化します。
+これにより、テストの構造が階層化され、可読性が向上します。
+
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+
+@DisplayName("CustomerService のテスト")
+class CustomerServiceTest {
+
+    @Nested
+    @DisplayName("register メソッド")
+    class Register {
+
+        @Test
+        @DisplayName("有効な入力の場合、顧客が登録されること")
+        void shouldRegisterCustomerWithValidInput() {
+             // ...
+        }
+
+        @Test
+        @DisplayName("メールアドレスが重複している場合、例外をスローすること")
+        void shouldThrowExceptionWhenEmailDuplicate() {
+             // ...
+        }
+    }
+}
+```
+
+#### 自然言語によるテスト説明 (@DisplayName)
+
+テストメソッド名だけで意図を伝えるのが難しい場合や、
+レポートを見やすくするために `@DisplayName` を使用して自然言語（日本語など）でテストケースを説明します。
+メソッド名は `shouldReturn...` や `given...When...Then...` のような英語の規約に従いつつ、 `@DisplayName` で詳細を補足します。
+
+```java
+@Test
+@DisplayName("在庫が不足している場合、OrderException をスローすること")
+void throwExceptionWhenOutOfStock() {
+    // ...
+}
 ```
 
 ### 統合テスト・パターン (Integration Tests)
