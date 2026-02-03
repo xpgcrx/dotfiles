@@ -38,7 +38,8 @@
   },
   "general": {
     "preferredEditor": "vim",
-    "previewFeatures": true
+    "previewFeatures": true,
+    "vimMode": true
   },
   "security": {
     "auth": {
