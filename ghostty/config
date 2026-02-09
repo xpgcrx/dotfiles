@@ -55,5 +55,7 @@
 theme = Nightfox
 
 font-family = JetBrainsMonoNL Nerd Font Mono
+font-family = Menlo
+font-family = Hiragino Sans W4
 font-feature = -dlig
 font-size = 10
