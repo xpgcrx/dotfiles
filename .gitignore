@@ -1,6 +1,14 @@
-claude/statsig
+claude/cache
+claude/debug
+claude/file-history
+claude/plans
+claude/plugins
 claude/projects
-claude/todos
+claude/session-env
 claude/shell-snapshots
+claude/statsig
+claude/tasks
+claude/todos
+claude/history.jsonl
 
 .DS_Store
