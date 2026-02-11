@@ -11,4 +11,6 @@ claude/tasks
 claude/todos
 claude/history.jsonl
 
+setup-*.log
+
 .DS_Store
