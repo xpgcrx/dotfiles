@@ -65,8 +65,8 @@
       "Bash(fdisk:*)",
       "Bash(> /dev/*)",
       "Bash(>> /dev/*)",
-      "Bash(sudo:*passwd*)",
-      "Bash(sudo:*shadow*)",
+      "Bash(sudo *passwd*)",
+      "Bash(sudo *shadow*)",
       "Bash(chmod 777 /*)",
       "Bash(chown root:*)",
       "Bash(sudo chmod 777:*)",
@@ -130,7 +130,7 @@
     "BASH_MAX_TIMEOUT_MS": "1200000",
     "MAX_THINKING_TOKENS": "200000"
   },
-  "apiKeyHelper": null,
+  "apiKeyHelper": "",
   "preferredNotifChannel": "terminal_bell",
   "includeCoAuthoredBy": false
 }
