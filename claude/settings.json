@@ -48,7 +48,7 @@
       "Glob(**)",
       "LS(**)",
       "WebFetch(domain:*)",
-      "WebSearch(*)",
+      "WebSearch(*)"
     ],
     "deny": [
       "Bash(rm -rf /)",
