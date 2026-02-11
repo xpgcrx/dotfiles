@@ -135,8 +135,32 @@ install_iterm2() {
 
 install_claude() {
   log "Setting up Claude config..."
+
+  # .claude がディレクトリ丸ごとシンボリックリンクの場合は解除する
+  if [ -L "$HOME/.claude" ]; then
+    log "Removing directory-level symlink $HOME/.claude"
+    rm "$HOME/.claude"
+  fi
+
   mkdir -p "$HOME/.claude"
+
   backup_and_link "$HOME/.claude/CLAUDE.md" "$DOTFILES_DIR/claude/CLAUDE.md"
+  backup_and_link "$HOME/.claude/settings.json" "$DOTFILES_DIR/claude/settings.json"
+
+  if [ -d "$DOTFILES_DIR/claude/skills" ]; then
+    log "Linking Claude skills directory..."
+    backup_and_link "$HOME/.claude/skills" "$DOTFILES_DIR/claude/skills"
+  fi
+
+  if [ -d "$DOTFILES_DIR/claude/commands" ]; then
+    log "Linking Claude commands directory..."
+    backup_and_link "$HOME/.claude/commands" "$DOTFILES_DIR/claude/commands"
+  fi
+
+  if [ -d "$DOTFILES_DIR/claude/agents" ]; then
+    log "Linking Claude agents directory..."
+    backup_and_link "$HOME/.claude/agents" "$DOTFILES_DIR/claude/agents"
+  fi
 }
 
 install_gemini() {
