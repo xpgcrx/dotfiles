@@ -1,6 +1,6 @@
 # Gemini CLI custom slash command for code review (develop/local)
 
-# 事前にdevelopブランチもローカルで最新化しておく必要が有る
+# 事前に差分確認のソースとなるブランチもローカルで最新化しておく必要が有る
 
 description = "ローカルの現在のブランチと、指定されたブランチの差分に対してコードレビューを行う。"
 
