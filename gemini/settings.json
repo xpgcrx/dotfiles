@@ -50,7 +50,8 @@
     "theme": "ANSI",
     "footer": {
       "hideContextPercentage": false
-    }
+    },
+    "showLineNumbers": false
   },
   "experimental": {
     "plan": true,
