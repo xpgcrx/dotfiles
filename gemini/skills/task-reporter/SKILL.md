@@ -5,7 +5,7 @@ description: 行った作業のレポートを作成する。
 
 # task-reporter
 
-行った作業のレポートを、作業ディレクトリにtask-report-{タスク内容を簡潔に表す文字列}.mdとして出力する。
+行った作業のレポートを、作業ディレクトリに `{yyyymmdd}-task-report-{タスク内容を簡潔に表す文字列}.md` として出力する。
 markdown-writerスキルを使用。
 以下の内容は最低限含める。
 
