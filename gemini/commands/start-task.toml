@@ -9,7 +9,7 @@ prompt = """
 
 ```bash
 gemini
-> /start-task make-curl-command-for-gaiketsu
+> /start-task create-xxx
 ```
 
 ※ ディレクトリパスはnvimtree上でgyで絶対パスをヤンク出来る。
@@ -19,7 +19,7 @@ gemini
 ### ステップ1: タスク内容について書かれたドキュメントの内容を確認
 
 タスク内容について書かれたドキュメントの内容を確認する。
-指定ドキュメント: {{args}}
+指定ドキュメント: {{args}} 配下のmemo.mdなど
 
 ### ステップ2: 疑問点を解消する
 
