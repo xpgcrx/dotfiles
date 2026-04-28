@@ -19,7 +19,6 @@ commandPrefix = [
   "docker system prune -af",
   "npm publish",
   "cargo publish",
-  "git commit",
   "git push"
 ]
 decision = "deny"
