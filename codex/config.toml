@@ -1,4 +1,0 @@
-# IMPORTANT: the top-level key is `mcp_servers` rather than `mcpServers`.
-[mcp_servers.atlassian]
-command = "npx"
-args = ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"]
