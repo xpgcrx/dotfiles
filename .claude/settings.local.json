@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(codex --version)",
+      "Bash(q --version)",
+      "Bash(codex mcp *)"
     ]
   },
   "enableAllProjectMcpServers": false
