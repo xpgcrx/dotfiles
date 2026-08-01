@@ -36,6 +36,11 @@ nmap <C-w>k :focusTop<CR>
 exmap focusBottom obcommand editor:focus-bottom
 nmap <C-w>j :focusBottom<CR>
 
+" Space押したあとにiを押すと、対象のwordを`と`で囲む
+" https://github.com/esm7/obsidian-vimrc-support?tab=readme-ov-file#surround-text-with-surround
+exmap surround_backticks surround ` `
+map s` :surround_backticks<CR>
+
 " ----- Range Error 対策 -----
 " https://github.com/esm7/obsidian-vimrc-support/issues/266
 " remove map to o

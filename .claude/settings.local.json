@@ -5,8 +5,23 @@
       "Bash(rg:*)",
       "Bash(codex --version)",
       "Bash(q --version)",
-      "Bash(codex mcp *)"
+      "Bash(codex mcp *)",
+      "Bash(rg:*)",
+      "Bash(gh pr *)"
     ]
   },
-  "enableAllProjectMcpServers": false
+  "enableAllProjectMcpServers": false,
+  "skillOverrides": {
+    "analyze-linux-performance-in-60s": "off",
+    "code-review": "off",
+    "complete-work-day": "off",
+    "create-manual-test-cases": "off",
+    "explain-current-branch-local": "off",
+    "java-dev": "off",
+    "reporting-doc-reviewer": "off",
+    "slack-info-getter": "off",
+    "start-develop-project": "off",
+    "start-task": "off",
+    "start-work-day": "off"
+  }
 }
